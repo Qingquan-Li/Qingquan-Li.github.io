@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Fruit</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+  <!-- element-ui -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.1/lib/theme-chalk/index.css">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.13.0/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuedraggable@2.24.3/dist/vuedraggable.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+  <!-- element-ui 组件库 -->
+  <script src="https://unpkg.com/element-ui@2.15.1/lib/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      /* Fill the page height (not only fill the device-height device screen height:
+      it will cause the background color to not be applied to the part of the web page
+      that cannot be displayed at the current screen height) */
+      min-height: 100vh;
+      /* https://webgradients.com/ */
+      /* 162 Perfect White */
+      background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+    }
+
+    .list-group-item {
+      /* text-align: center; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .list-group-item-lg {
+      height: 22vh;
+    }
+
+    .new-technology-text {
+      padding: 3vh 0 0 1vw;
+    }
+
+    /* custom list color */
+    .list-group-item-custom-whitesmoke {
+      color: #696969;
+      background-color: #F5F5F5;
+    }
+
+    .list-group-item-custom-orange {
+      color: #E65100;
+      background-color: #FFE0B2;
+    }
+
+    .default-empty-row {
+      height: 8vh;
+    }
+
+    .empty-row {
+      height: 22vh;
+    }
+
+    .container-fluid {
+      padding-top: 5vh;
+    }
+
+    .list-group-item p {
+      padding-top: 3vh;
+    }
+
+    .technology-item-name {
+      /* http://zuga.net/articles/html-heading-elements/ */
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .technology-item-icon {
+      font-size: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="container-fluid">
+
+    <div class="row">
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 new-technology-text">
+        <h4>Fruit Picture:</h4>
+      </div><!-- End .col-lg-1 -->
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <!-- draggable=".draggable" for fixed position and no dragging. handle=".handle" for preventing dragging -->
+          <draggable class="list-group" v-model="technology1" draggable=".draggable" group="group1" @add="onAddGroup1">
+            <transition-group name="el-zoom-in-bottom">
+              <div class="list-group-item list-group-item-danger list-group-item-lg" v-for="item in technology1"
+                :key="item.id">
+                <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup1 }">
+                  <span class="technology-item-name">{{item.name}}</span>
+                  <!-- <br> -->
+                  <span class="technology-item-icon">{{item.icon}}</span>
+                </p>
+              </div>
+              </transition>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="technology2" draggable=".draggable" group="group2" @add="onAddGroup2">
+            <transition-group name="el-zoom-in-bottom">
+              <div class="list-group-item list-group-item-warning list-group-item-lg" v-for="item in technology2"
+                :key="item.id">
+                <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup2 }">
+                  <span class="technology-item-name">{{item.name}}</span>
+                  <!-- <br> -->
+                  <span class="technology-item-icon">{{item.icon}}</span>
+                </p>
+              </div>
+            </transition-group>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="technology3" draggable=".draggable" group="group3" @add="onAddGroup3">
+            <transition-group name="el-zoom-in-bottom">
+              <div class="list-group-item list-group-item-custom-orange list-group-item-lg" v-for="item in technology3"
+                :key="item.id">
+                <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup3 }">
+                  <span class="technology-item-name">{{item.name}}</span>
+                  <!-- <br> -->
+                  <span class="technology-item-icon">{{item.icon}}</span>
+                </p>
+              </div>
+            </transition-group>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="technology4" draggable=".draggable" group="group4" @add="onAddGroup4">
+            <transition-group name="el-zoom-in-bottom">
+              <div class="list-group-item list-group-item-info list-group-item-lg" v-for="item in technology4"
+                :key="item.id">
+                <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup4 }">
+                  <span class="technology-item-name">{{item.name}}</span>
+                  <!-- <br> -->
+                  <span class="technology-item-icon">{{item.icon}}</span>
+                </p>
+              </div>
+            </transition-group>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="technology5" draggable=".draggable" group="group5" @add="onAddGroup5">
+            <transition-group name="el-zoom-in-bottom">
+              <div class="list-group-item list-group-item-success list-group-item-lg" v-for="item in technology5"
+                :key="item.id">
+                <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup5 }">
+                  <span class="technology-item-name">{{item.name}}</span>
+                  <!-- <br> -->
+                  <span class="technology-item-icon">{{item.icon}}</span>
+                </p>
+              </div>
+            </transition-group>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="technology6" draggable=".draggable" group="group6" @add="onAddGroup6">
+            <transition-group name="el-zoom-in-bottom">
+              <div class="list-group-item list-group-item-custom-whitesmoke list-group-item-lg"
+                v-for="item in technology6" :key="item.id">
+                <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup6 }">
+                  <span class="technology-item-name">{{item.name}}</span>
+                  <!-- <br> -->
+                  <span class="technology-item-icon">{{item.icon}}</span>
+                </p>
+              </div>
+            </transition-group>
+          </draggable>
+        </div>
+      </div><!-- End .col-lg-10 -->
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <button type="button" class="btn btn-default" onClick="window.location.reload();">
+          Refresh
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-warning">
+          ⌛️ {{ time }}s
+        </button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-success" v-on:click="onSubmit">
+          If done,click here
+        </button>
+      </div><!-- End .col-lg-1 -->
+    </div><!-- End .row -->
+
+    <div class="row default-empty-row"></div>
+    <!-- v-bind:class=“{'css类名':控制是否显示（true or false)}” -->
+    <div class="row" v-bind:class="{ 'empty-row': isDisplayEmptyRow }"></div>
+
+    <div class="row">
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <h4>Fruit Name </h4>
+        <small>Please drag the cards in this row to the corresponding Fruit Picture,
+          only 6 cards can be matched successfully.</small>
+      </div><!-- End .col-lg-1 -->
+
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry1" group="group1">
+            <div class="list-group-item" v-for="item in industry1" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry2" group="group5">
+            <div class="list-group-item " v-for="item in industry2" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry3" group="">
+            <div class="list-group-item" v-for="item in industry3" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry4" group="">
+            <div class="list-group-item" v-for="item in industry4" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry5" group="group4">
+            <div class="list-group-item" v-for="item in industry5" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry6" group="">
+            <div class="list-group-item" v-for="item in industry6" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry7" group="">
+            <div class="list-group-item" v-for="item in industry7" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry8" group="group6">
+            <div class="list-group-item" v-for="item in industry8" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry9" group="">
+            <div class="list-group-item" v-for="item in industry9" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry10" group="group2">
+            <div class="list-group-item" v-for="item in industry10" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry11" group="">
+            <div class="list-group-item" v-for="item in industry11" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry12" group="">
+            <div class="list-group-item" v-for="item in industry12" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry13" group="group3">
+            <div class="list-group-item" v-for="item in industry13" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry14" group="">
+            <div class="list-group-item" v-for="item in industry14" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry15" group="">
+            <div class="list-group-item" v-for="item in industry15" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry16" group="">
+            <div class="list-group-item" v-for="item in industry16" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry17" group="">
+            <div class="list-group-item" v-for="item in industry17" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <draggable class="list-group" v-model="industry18" group="">
+            <div class="list-group-item" v-for="item in industry18" :key="item.id">
+              <h4>{{item.name}}</h4>
+            </div>
+          </draggable>
+        </div>
+      </div><!-- End .col-lg-10 -->
+
+    </div><!-- End .row-->
+
+  </div><!-- End #app -->
+  <script>
+    // Register components globally
+    Vue.component('vuedraggable', window.vuedraggable.name)
+    var app = new Vue({
+      el: '#app',
+      components: {
+        vuedraggable,
+      },
+      data() {
+        return {
+          isDisplayEmptyRow: true,
+          isActiveAnimateGroup1: false,
+          isActiveAnimateGroup2: false,
+          isActiveAnimateGroup3: false,
+          isActiveAnimateGroup4: false,
+          isActiveAnimateGroup5: false,
+          isActiveAnimateGroup6: false,
+          // following 2 data for countUpTimer:
+          time: 0,
+          interval: null,
+          // draggable: false,
+          technology1: [
+            { id: 1, icon: "🍎" },
+          ],
+          technology2: [
+            { id: 2, icon: "🍋" },
+          ],
+          technology3: [
+            { id: 3, icon: "🍊" },
+          ],
+          technology4: [
+            { id: 4, icon: "🫐" },
+          ],
+          technology5: [
+            { id: 5, icon: "🥑" },
+          ],
+          technology6: [
+            { id: 6, icon: "🥥" },
+          ],
+          // Fruit Name
+          industry1: [
+            { id: 101, name: "Apple" },
+          ],
+          industry2: [
+            { id: 102, name: "Avocado", },
+          ],
+          industry3: [
+            { id: 103, name: "Banana" },
+          ],
+          industry4: [
+            { id: 104, name: "Blackberry" },
+          ],
+          industry5: [
+            { id: 105, name: "Blueberry" },
+          ],
+          industry6: [
+            { id: 106, name: "Cantaloupe" },
+          ],
+          industry7: [
+            { id: 107, name: "Cherry" },
+          ],
+          industry8: [
+            { id: 108, name: "Coconut", },
+          ],
+          industry9: [
+            { id: 109, name: "Grape" },
+          ],
+          industry10: [
+            { id: 110, name: "Lemon" },
+          ],
+          industry11: [
+            { id: 111, name: "Lychee" },
+          ],
+          industry12: [
+            { id: 112, name: "Mango", },
+          ],
+          industry13: [
+            { id: 113, name: "Orange" },
+          ],
+          industry14: [
+            { id: 114, name: "Peach" },
+          ],
+          industry15: [
+            { id: 115, name: "Pear" },
+          ],
+          industry16: [
+            { id: 116, name: "Pineapple" },
+          ],
+          industry17: [
+            { id: 117, name: "Strawberry" },
+          ],
+          industry18: [
+            { id: 118, name: "Watermelon" },
+          ],
+
+        };
+      },
+      // Initialize execution
+      mounted() {
+        this.descriptionAlert()
+      },
+      methods: {
+        // // start drag event
+        // onStart() {
+        //     this.draggable = true;
+        // },
+        // // end drag event
+        // onEnd() {
+        //     this.draggable = false;
+        // },
+        // Event fired when dragging from one array to another
+        onAddGroup1() {
+          this.isDisplayEmptyRow = false;
+          this.isActiveAnimateGroup1 = true;
+          swal({
+            icon: "success",
+            button: false,
+            timer: 1200,
+          });
+        },
+        onAddGroup2() {
+          this.isDisplayEmptyRow = false;
+          this.isActiveAnimateGroup2 = true;
+          swal({
+            icon: "success",
+            button: false,
+            timer: 1200,
+          });
+        },
+        onAddGroup3() {
+          this.isDisplayEmptyRow = false;
+          this.isActiveAnimateGroup3 = true;
+          swal({
+            icon: "success",
+            button: false,
+            timer: 1200,
+          });
+        },
+        onAddGroup4() {
+          this.isDisplayEmptyRow = false;
+          this.isActiveAnimateGroup4 = true;
+          swal({
+            icon: "success",
+            button: false,
+            timer: 1200,
+          });
+        },
+        onAddGroup5() {
+          this.isDisplayEmptyRow = false;
+          this.isActiveAnimateGroup5 = true;
+          swal({
+            icon: "success",
+            button: false,
+            timer: 1200,
+          });
+        },
+        onAddGroup6() {
+          this.isDisplayEmptyRow = false;
+          this.isActiveAnimateGroup6 = true;
+          swal({
+            icon: "success",
+            button: false,
+            timer: 1200,
+          });
+        },
+        // Timer: https://stackoverflow.com/questions/47944557/using-vue-to-count-up-by-seconds
+        startCountUpTimer() {
+          // https://www.w3schools.com/jsref/met_win_setinterval.asp
+          this.interval = setInterval(this.incrementTime, 1000);
+        },
+        stopCountUpTimer() {
+          // https://www.w3schools.com/jsref/met_win_clearinterval.asp
+          clearInterval(this.interval);
+        },
+        incrementTime() {
+          this.time = parseInt(this.time) + 1;
+        },
+        // Initialize the popup
+        descriptionAlert() {
+          swal({
+            title: "Game Instructions",
+            text: 'Please drag the "Fruit Name" card at the bottom ⬇ to the corresponding "Fruit Picture" card at the top ⬆. Only 6 cards can be matched successfully. When you are done, please click the green button in the upper right corner ↗ , the timer will stop automatically and the time of your operation will be displayed.',
+            button: "Start the Timer",
+          }).then(() => {
+            // Arrow functions may have compatibility issues with older browsers
+            this.startCountUpTimer();
+          });
+        },
+        onSubmit() {
+          this.stopCountUpTimer();
+          swal({
+            icon: "success",
+            title: "You took " + this.time + " seconds",
+            button: "Close",
+          });
+          this.onConfetti();
+          // this.onCanvasConfetti();
+        },
+        onCanvasConfetti() {
+          // Default effect
+          // confetti();
+          // School Pride
+          // var end = Date.now() + (15 * 1000);
+          var end = Date.now() + (15000 * 1000);
+
+          // go Buckeyes!
+          var colors = ['#bb0000', '#ffffff'];
+
+          (function frame() {
+            confetti({
+              particleCount: 2,
+              angle: 60,
+              spread: 55,
+              origin: { x: 0 },
+              colors: colors
+            });
+            confetti({
+              particleCount: 2,
+              angle: 120,
+              spread: 55,
+              origin: { x: 1 },
+              colors: colors
+            });
+
+            if (Date.now() < end) {
+              requestAnimationFrame(frame);
+            }
+          }());
+        },
+        onConfetti() {
+          // copy from: https://codepen.io/longbin/pen/BaKVemE
+          "use strict";
+          var _createClass = function () {
+            function defineProperties(target, props) {
+              for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+              }
+            }
+
+            return function (Constructor, protoProps, staticProps) {
+              if (protoProps) defineProperties(Constructor.prototype, protoProps);
+              if (staticProps) defineProperties(Constructor, staticProps);
+              return Constructor;
+            };
+          }();
+
+          function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+              throw new TypeError("Cannot call a class as a function");
+            }
+          }
+
+          var Progress = function () {
+            function Progress() {
+              var param = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+              _classCallCheck(this, Progress);
+
+              this.timestamp = null;
+              this.duration = param.duration || Progress.CONST.DURATION;
+              this.progress = 0;
+              this.delta = 0;
+              this.progress = 0;
+              this.isLoop = !!param.isLoop;
+
+              this.reset();
+            }
+
+            Progress.prototype.reset = function reset() {
+              this.timestamp = null;
+            };
+
+            Progress.prototype.start = function start(now) {
+              this.timestamp = now;
+            };
+
+            Progress.prototype.tick = function tick(now) {
+              if (this.timestamp) {
+                this.delta = now - this.timestamp;
+                this.progress = Math.min(this.delta / this.duration, 1);
+
+                if (this.progress >= 1 && this.isLoop) {
+                  this.start(now);
+                }
+
+                return this.progress;
+              } else {
+                return 0;
+              }
+            };
+
+            _createClass(Progress, null, [{
+              key: "CONST",
+              get: function get() {
+                return {
+                  DURATION: 1000
+                };
+              }
+            }]);
+
+            return Progress;
+          }();
+
+          var Confetti = function () {
+            function Confetti(param) {
+              _classCallCheck(this, Confetti);
+
+              this.parent = param.elm || document.body;
+              this.canvas = document.createElement("canvas");
+              this.ctx = this.canvas.getContext("2d");
+              this.width = param.width || this.parent.offsetWidth;
+              this.height = param.height || this.parent.offsetHeight;
+              this.length = param.length || Confetti.CONST.PAPER_LENGTH;
+              this.yRange = param.yRange || this.height * 2;
+              this.progress = new Progress({
+                duration: param.duration,
+                isLoop: true
+              });
+              this.rotationRange = typeof param.rotationLength === "number" ? param.rotationRange : 10;
+              this.speedRange = typeof param.speedRange === "number" ? param.speedRange : 10;
+              this.sprites = [];
+
+              this.canvas.style.cssText = ["display: block", "position: absolute", "top: 0", "left: 0", "pointer-events: none"].join(";");
+
+              this.render = this.render.bind(this);
+
+              this.build();
+
+              this.parent.append(this.canvas);
+              this.progress.start(performance.now());
+
+              requestAnimationFrame(this.render);
+            }
+
+            Confetti.prototype.build = function build() {
+              for (var i = 0; i < this.length; ++i) {
+                var canvas = document.createElement("canvas"),
+                  ctx = canvas.getContext("2d");
+
+                canvas.width = Confetti.CONST.SPRITE_WIDTH;
+                canvas.height = Confetti.CONST.SPRITE_HEIGHT;
+
+                canvas.position = {
+                  initX: Math.random() * this.width,
+                  initY: -canvas.height - Math.random() * this.yRange
+                };
+
+                canvas.rotation = this.rotationRange / 2 - Math.random() * this.rotationRange;
+                canvas.speed = this.speedRange / 2 + Math.random() * (this.speedRange / 2);
+
+                ctx.save();
+                ctx.fillStyle = Confetti.CONST.COLORS[Math.random() * Confetti.CONST.COLORS.length | 0];
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.restore();
+
+                this.sprites.push(canvas);
+              }
+            };
+
+            Confetti.prototype.render = function render(now) {
+              var progress = this.progress.tick(now);
+
+              this.canvas.width = this.width;
+              this.canvas.height = this.height;
+
+              for (var i = 0; i < this.length; ++i) {
+                this.ctx.save();
+                this.ctx.translate(this.sprites[i].position.initX + this.sprites[i].rotation * Confetti.CONST.ROTATION_RATE * progress, this.sprites[i].position.initY + progress * (this.height + this.yRange));
+                this.ctx.rotate(this.sprites[i].rotation);
+                this.ctx.drawImage(this.sprites[i], -Confetti.CONST.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * this.sprites[i].speed)) / 2, -Confetti.CONST.SPRITE_HEIGHT / 2, Confetti.CONST.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * this.sprites[i].speed)), Confetti.CONST.SPRITE_HEIGHT);
+                this.ctx.restore();
+              }
+
+              requestAnimationFrame(this.render);
+            };
+
+            _createClass(Confetti, null, [{
+              key: "CONST",
+              get: function get() {
+                return {
+                  SPRITE_WIDTH: 9,
+                  SPRITE_HEIGHT: 16,
+                  PAPER_LENGTH: 100,
+                  DURATION: 8000,
+                  ROTATION_RATE: 50,
+                  COLORS: ["#EF5350", "#EC407A", "#AB47BC", "#7E57C2", "#5C6BC0", "#42A5F5", "#29B6F6", "#26C6DA", "#26A69A", "#66BB6A", "#9CCC65", "#D4E157", "#FFEE58", "#FFCA28", "#FFA726", "#FF7043", "#8D6E63", "#BDBDBD", "#78909C"]
+                };
+              }
+            }]);
+
+            return Confetti;
+          }();
+
+          (function () {
+            var DURATION = 8000,
+              LENGTH = 120;
+
+            new Confetti({
+              width: window.innerWidth,
+              height: window.innerHeight,
+              length: LENGTH,
+              duration: DURATION
+            });
+
+            setTimeout(function () {
+              new Confetti({
+                width: window.innerWidth,
+                height: window.innerHeight,
+                length: LENGTH,
+                duration: DURATION
+              });
+            }, DURATION / 2);
+          })();
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>
