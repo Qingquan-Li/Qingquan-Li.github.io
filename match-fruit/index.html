@@ -42,7 +42,7 @@
       height: 22vh;
     }
 
-    .new-technology-text {
+    .fruit-picture-text {
       padding: 3vh 0 0 1vw;
     }
 
@@ -73,13 +73,13 @@
       padding-top: 3vh;
     }
 
-    .technology-item-name {
+    .fruit-item-name {
       /* http://zuga.net/articles/html-heading-elements/ */
       font-size: 18px;
       font-weight: 500;
     }
 
-    .technology-item-icon {
+    .fruit-item-icon {
       font-size: 32px;
       display: flex;
       justify-content: center;
@@ -92,90 +92,90 @@
   <div id="app" class="container-fluid">
 
     <div class="row">
-      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 new-technology-text">
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 fruit-picture-text">
         <h4>Fruit Picture:</h4>
       </div><!-- End .col-lg-1 -->
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
           <!-- draggable=".draggable" for fixed position and no dragging. handle=".handle" for preventing dragging -->
-          <draggable class="list-group" v-model="technology1" draggable=".draggable" group="group1" @add="onAddGroup1">
+          <draggable class="list-group" v-model="fruitPicArr1" draggable=".draggable" group="group1" @add="onAddGroup1">
             <transition-group name="el-zoom-in-bottom">
-              <div class="list-group-item list-group-item-danger list-group-item-lg" v-for="item in technology1"
+              <div class="list-group-item list-group-item-danger list-group-item-lg" v-for="item in fruitPicArr1"
                 :key="item.id">
                 <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup1 }">
-                  <span class="technology-item-name">{{item.name}}</span>
+                  <span class="fruit-item-name">{{item.name}}</span>
                   <!-- <br> -->
-                  <span class="technology-item-icon">{{item.icon}}</span>
+                  <span class="fruit-item-icon">{{item.icon}}</span>
                 </p>
               </div>
               </transition>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="technology2" draggable=".draggable" group="group2" @add="onAddGroup2">
+          <draggable class="list-group" v-model="fruitPicArr2" draggable=".draggable" group="group2" @add="onAddGroup2">
             <transition-group name="el-zoom-in-bottom">
-              <div class="list-group-item list-group-item-warning list-group-item-lg" v-for="item in technology2"
+              <div class="list-group-item list-group-item-warning list-group-item-lg" v-for="item in fruitPicArr2"
                 :key="item.id">
                 <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup2 }">
-                  <span class="technology-item-name">{{item.name}}</span>
+                  <span class="fruit-item-name">{{item.name}}</span>
                   <!-- <br> -->
-                  <span class="technology-item-icon">{{item.icon}}</span>
+                  <span class="fruit-item-icon">{{item.icon}}</span>
                 </p>
               </div>
             </transition-group>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="technology3" draggable=".draggable" group="group3" @add="onAddGroup3">
+          <draggable class="list-group" v-model="fruitPicArr3" draggable=".draggable" group="group3" @add="onAddGroup3">
             <transition-group name="el-zoom-in-bottom">
-              <div class="list-group-item list-group-item-custom-orange list-group-item-lg" v-for="item in technology3"
+              <div class="list-group-item list-group-item-custom-orange list-group-item-lg" v-for="item in fruitPicArr3"
                 :key="item.id">
                 <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup3 }">
-                  <span class="technology-item-name">{{item.name}}</span>
+                  <span class="fruit-item-name">{{item.name}}</span>
                   <!-- <br> -->
-                  <span class="technology-item-icon">{{item.icon}}</span>
+                  <span class="fruit-item-icon">{{item.icon}}</span>
                 </p>
               </div>
             </transition-group>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="technology4" draggable=".draggable" group="group4" @add="onAddGroup4">
+          <draggable class="list-group" v-model="fruitPicArr4" draggable=".draggable" group="group4" @add="onAddGroup4">
             <transition-group name="el-zoom-in-bottom">
-              <div class="list-group-item list-group-item-info list-group-item-lg" v-for="item in technology4"
+              <div class="list-group-item list-group-item-info list-group-item-lg" v-for="item in fruitPicArr4"
                 :key="item.id">
                 <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup4 }">
-                  <span class="technology-item-name">{{item.name}}</span>
+                  <span class="fruit-item-name">{{item.name}}</span>
                   <!-- <br> -->
-                  <span class="technology-item-icon">{{item.icon}}</span>
+                  <span class="fruit-item-icon">{{item.icon}}</span>
                 </p>
               </div>
             </transition-group>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="technology5" draggable=".draggable" group="group5" @add="onAddGroup5">
+          <draggable class="list-group" v-model="fruitPicArr5" draggable=".draggable" group="group5" @add="onAddGroup5">
             <transition-group name="el-zoom-in-bottom">
-              <div class="list-group-item list-group-item-success list-group-item-lg" v-for="item in technology5"
+              <div class="list-group-item list-group-item-success list-group-item-lg" v-for="item in fruitPicArr5"
                 :key="item.id">
                 <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup5 }">
-                  <span class="technology-item-name">{{item.name}}</span>
+                  <span class="fruit-item-name">{{item.name}}</span>
                   <!-- <br> -->
-                  <span class="technology-item-icon">{{item.icon}}</span>
+                  <span class="fruit-item-icon">{{item.icon}}</span>
                 </p>
               </div>
             </transition-group>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="technology6" draggable=".draggable" group="group6" @add="onAddGroup6">
+          <draggable class="list-group" v-model="fruitPicArr6" draggable=".draggable" group="group6" @add="onAddGroup6">
             <transition-group name="el-zoom-in-bottom">
               <div class="list-group-item list-group-item-custom-whitesmoke list-group-item-lg"
-                v-for="item in technology6" :key="item.id">
+                v-for="item in fruitPicArr6" :key="item.id">
                 <p v-bind:class="{ 'animate__animated animate__flip': isActiveAnimateGroup6 }">
-                  <span class="technology-item-name">{{item.name}}</span>
+                  <span class="fruit-item-name">{{item.name}}</span>
                   <!-- <br> -->
-                  <span class="technology-item-icon">{{item.icon}}</span>
+                  <span class="fruit-item-icon">{{item.icon}}</span>
                 </p>
               </div>
             </transition-group>
@@ -212,127 +212,127 @@
 
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry1" group="group1">
-            <div class="list-group-item" v-for="item in industry1" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr1" group="group1">
+            <div class="list-group-item" v-for="item in fruitNameArr1" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry2" group="group5">
-            <div class="list-group-item " v-for="item in industry2" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr2" group="group5">
+            <div class="list-group-item " v-for="item in fruitNameArr2" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry3" group="">
-            <div class="list-group-item" v-for="item in industry3" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr3" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr3" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry4" group="">
-            <div class="list-group-item" v-for="item in industry4" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr4" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr4" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry5" group="group4">
-            <div class="list-group-item" v-for="item in industry5" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr5" group="group4">
+            <div class="list-group-item" v-for="item in fruitNameArr5" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry6" group="">
-            <div class="list-group-item" v-for="item in industry6" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr6" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr6" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry7" group="">
-            <div class="list-group-item" v-for="item in industry7" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr7" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr7" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry8" group="group6">
-            <div class="list-group-item" v-for="item in industry8" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr8" group="group6">
+            <div class="list-group-item" v-for="item in fruitNameArr8" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry9" group="">
-            <div class="list-group-item" v-for="item in industry9" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr9" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr9" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry10" group="group2">
-            <div class="list-group-item" v-for="item in industry10" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr10" group="group2">
+            <div class="list-group-item" v-for="item in fruitNameArr10" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry11" group="">
-            <div class="list-group-item" v-for="item in industry11" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr11" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr11" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry12" group="">
-            <div class="list-group-item" v-for="item in industry12" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr12" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr12" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry13" group="group3">
-            <div class="list-group-item" v-for="item in industry13" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr13" group="group3">
+            <div class="list-group-item" v-for="item in fruitNameArr13" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry14" group="">
-            <div class="list-group-item" v-for="item in industry14" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr14" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr14" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry15" group="">
-            <div class="list-group-item" v-for="item in industry15" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr15" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr15" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry16" group="">
-            <div class="list-group-item" v-for="item in industry16" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr16" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr16" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry17" group="">
-            <div class="list-group-item" v-for="item in industry17" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr17" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr17" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <draggable class="list-group" v-model="industry18" group="">
-            <div class="list-group-item" v-for="item in industry18" :key="item.id">
+          <draggable class="list-group" v-model="fruitNameArr18" group="">
+            <div class="list-group-item" v-for="item in fruitNameArr18" :key="item.id">
               <h4>{{item.name}}</h4>
             </div>
           </draggable>
@@ -363,77 +363,77 @@
           time: 0,
           interval: null,
           // draggable: false,
-          technology1: [
+          fruitPicArr1: [
             { id: 1, icon: "🍎" },
           ],
-          technology2: [
+          fruitPicArr2: [
             { id: 2, icon: "🍋" },
           ],
-          technology3: [
+          fruitPicArr3: [
             { id: 3, icon: "🍊" },
           ],
-          technology4: [
+          fruitPicArr4: [
             { id: 4, icon: "🫐" },
           ],
-          technology5: [
+          fruitPicArr5: [
             { id: 5, icon: "🥑" },
           ],
-          technology6: [
+          fruitPicArr6: [
             { id: 6, icon: "🥥" },
           ],
           // Fruit Name
-          industry1: [
+          fruitNameArr1: [
             { id: 101, name: "Apple" },
           ],
-          industry2: [
+          fruitNameArr2: [
             { id: 102, name: "Avocado", },
           ],
-          industry3: [
+          fruitNameArr3: [
             { id: 103, name: "Banana" },
           ],
-          industry4: [
+          fruitNameArr4: [
             { id: 104, name: "Blackberry" },
           ],
-          industry5: [
+          fruitNameArr5: [
             { id: 105, name: "Blueberry" },
           ],
-          industry6: [
+          fruitNameArr6: [
             { id: 106, name: "Cantaloupe" },
           ],
-          industry7: [
+          fruitNameArr7: [
             { id: 107, name: "Cherry" },
           ],
-          industry8: [
+          fruitNameArr8: [
             { id: 108, name: "Coconut", },
           ],
-          industry9: [
+          fruitNameArr9: [
             { id: 109, name: "Grape" },
           ],
-          industry10: [
+          fruitNameArr10: [
             { id: 110, name: "Lemon" },
           ],
-          industry11: [
+          fruitNameArr11: [
             { id: 111, name: "Lychee" },
           ],
-          industry12: [
+          fruitNameArr12: [
             { id: 112, name: "Mango", },
           ],
-          industry13: [
+          fruitNameArr13: [
             { id: 113, name: "Orange" },
           ],
-          industry14: [
+          fruitNameArr14: [
             { id: 114, name: "Peach" },
           ],
-          industry15: [
+          fruitNameArr15: [
             { id: 115, name: "Pear" },
           ],
-          industry16: [
+          fruitNameArr16: [
             { id: 116, name: "Pineapple" },
           ],
-          industry17: [
+          fruitNameArr17: [
             { id: 117, name: "Strawberry" },
           ],
-          industry18: [
+          fruitNameArr18: [
             { id: 118, name: "Watermelon" },
           ],
 
@@ -522,7 +522,7 @@
         // Initialize the popup
         descriptionAlert() {
           swal({
-            title: "Game Instructions",
+            title: "Game Guide",
             text: 'Please drag the "Fruit Name" card at the bottom ⬇ to the corresponding "Fruit Picture" card at the top ⬆. Only 6 cards can be matched successfully. When you are done, please click the green button in the upper right corner ↗ , the timer will stop automatically and the time of your operation will be displayed.',
             button: "Start the Timer",
           }).then(() => {
