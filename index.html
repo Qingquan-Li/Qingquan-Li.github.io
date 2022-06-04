@@ -26,8 +26,13 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="#projects">Projects</a>
-          <a class="nav-link" href="#photos">Photos</a>
-          <a class="nav-link" href="https://github.com/Qingquan-Li">GitHub</a>
+          <a class="nav-link" href="#github">GitHub</a>
+          <a class="nav-link" href="#travel">Travel</a>
+          <a class="nav-link" href="resume.html">Resume
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -40,7 +45,7 @@
         <img src="https://avatars.githubusercontent.com/u/19491358" class="avatar" alt="Avatar">
         <br>
         <br>
-        <h5>👋 Hi, My name is Qingquan Li.</h5>
+        <h5>👋 Hi, My name is Qingquan Li.</h5>
       </div>
 
       <div class="projects-container">
@@ -117,11 +122,26 @@
         </div><!-- projects-list-container -->
       </div><!-- projects-container -->
 
-      <div class="photos-container">
+      <div class="github-container">
         <h3 class="text-center">
-          <a name="photos" id="headingPhotos">Photos</a>
+          <a name="github" id="headingGithub">GitHub</a>
         </h3>
-        <div class="photos-list-container py-5">
+        <div class="text-center py-4">
+          <a href="https://github.com/Qingquan-Li">
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=Qingquan-Li&show_icons=true&theme=graywhite"
+              class="img-fluid"
+              alt="github.com/Qingquan-Li"
+            >
+          </a>
+        </div>
+      </div><!-- End .github-container -->
+
+      <div class="travel-container">
+        <h3 class="text-center">
+          <a name="travel" id="headingTravel">Travel</a>
+        </h3>
+        <div class="travel-list-container py-5">
           <!-- <div id="app" class="row row-cols-3 row-cols-md-4 g-1">
             <img v-for="image in images" :src="image" :alt="image">
           </div> -->
@@ -130,8 +150,8 @@
               :style="{ backgroundImage: 'url(' + image + ')' }">
             </div>
           </div><!--  End #app -->
-        </div><!-- End .photos-list-container -->
-      </div><!-- End .photos-container -->
+        </div><!-- End .travel-list-container -->
+      </div><!-- End .travel-container -->
 
     </div><!-- End .row -->
   </div><!-- End .main-container -->
@@ -143,9 +163,11 @@
   <script type="module">
     import { annotate } from 'https://unpkg.com/rough-notation?module';
     const headingProjects = document.querySelector('#headingProjects');
-    const headingPhotos = document.querySelector('#headingPhotos');
+    const headingGithub = document.querySelector('#headingGithub');
+    const headingTravel = document.querySelector('#headingTravel');
     annotate(headingProjects, { type: 'underline', color: 'blue' }).show();
-    annotate(headingPhotos, { type: 'underline', color: 'green' }).show();
+    annotate(headingGithub, { type: 'underline', color: 'DimGray' }).show();
+    annotate(headingTravel, { type: 'underline', color: 'green' }).show();
   </script>
 
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
@@ -155,93 +177,57 @@
       el: '#app',
       data: {
         images: [
+          // America/DC
+          './images/America/DC/3.JPG',
+          './images/America/DC/2.JPG',
+          './images/America/DC/1.JPG',
           // America/NewYork
-          './images/America/NewYork/1.JPG',
-          // './images/America/NewYork/2.JPG',
-          './images/America/NewYork/3.JPG',
-          './images/America/NewYork/4.JPG',
-          './images/America/NewYork/5.JPG',
-          './images/America/NewYork/6.JPG',
-          './images/America/NewYork/7.JPG',
-          './images/America/NewYork/8.JPG',
-          './images/America/NewYork/9.JPG',
-          './images/America/NewYork/10.JPG',
-          './images/America/NewYork/11.JPG',
-          './images/America/NewYork/12.JPG',
-          './images/America/NewYork/13.JPG',
-          './images/America/NewYork/14.JPG',
+          './images/America/NewYork/17.JPG',
+          './images/America/NewYork/16.JPG',
           './images/America/NewYork/15.JPG',
+          './images/America/NewYork/13.JPG',
+          './images/America/NewYork/11.JPG',
+          './images/America/NewYork/9.JPG',
+          './images/America/NewYork/6.JPG',
+          './images/America/NewYork/5.JPG',
+          './images/America/NewYork/4.JPG',
+          './images/America/NewYork/3.JPG',
+          './images/America/NewYork/1.JPG',
           // America/NewJersey
-          './images/America/NewJersey/1.JPG',
-          './images/America/NewJersey/2.JPG',
-          './images/America/NewJersey/3.JPG',
+          // './images/America/NewJersey/3.JPG',
           // America/Connecticut
-          './images/America/Connecticut/1.JPG',
-          './images/America/Connecticut/2.JPG',
-          './images/America/Connecticut/3.JPG',
           './images/America/Connecticut/4.JPG',
+          './images/America/Connecticut/3.JPG',
+          './images/America/Connecticut/2.JPG',
           // Malaysia/KualaLumpur
-          './images/Malaysia/KualaLumpur/1.JPG',
-          './images/Malaysia/KualaLumpur/2.JPG',
-          './images/Malaysia/KualaLumpur/3.JPG',
-          './images/Malaysia/KualaLumpur/4.JPG',
-          './images/Malaysia/KualaLumpur/5.JPG',
-          './images/Malaysia/KualaLumpur/6.JPG',
-          './images/Malaysia/KualaLumpur/7.JPG',
+          // './images/Malaysia/KualaLumpur/2.JPG',
           // Malaysia/Melaka
-          './images/Malaysia/Melaka/1.JPG',
-          './images/Malaysia/Melaka/2.JPG',
-          './images/Malaysia/Melaka/3.JPG',
           './images/Malaysia/Melaka/4.JPG',
+          './images/Malaysia/Melaka/3.JPG',
+          './images/Malaysia/Melaka/1.JPG',
           // Malaysia/KotaKinabalu
-          './images/Malaysia/KotaKinabalu/1.JPG',
-          './images/Malaysia/KotaKinabalu/2.JPG',
           './images/Malaysia/KotaKinabalu/3.JPG',
-          './images/Malaysia/KotaKinabalu/4.JPG',
-          './images/Malaysia/KotaKinabalu/5.JPG',
-          './images/Malaysia/KotaKinabalu/6.JPG',
-          './images/Malaysia/KotaKinabalu/7.JPG',
-          './images/Malaysia/KotaKinabalu/8.JPG',
-          './images/Malaysia/KotaKinabalu/9.JPG',
-          './images/Malaysia/KotaKinabalu/10.JPG',
           // Thailand/Bangkok
-          './images/Thailand/Bangkok/1.JPG',
-          './images/Thailand/Bangkok/2.JPG',
-          './images/Thailand/Bangkok/3.JPG',
           './images/Thailand/Bangkok/4.JPG',
           // Thailand/ChiangMai
-          './images/Thailand/ChiangMai/1.JPG',
-          './images/Thailand/ChiangMai/2.JPG',
           './images/Thailand/ChiangMai/3.JPG',
+          './images/Thailand/ChiangMai/2.JPG',
+          './images/Thailand/ChiangMai/1.JPG',
           // Thailand/ChiangRai
-          './images/Thailand/ChiangRai/1.JPG',
-          './images/Thailand/ChiangRai/2.JPG',
-          './images/Thailand/ChiangRai/3.JPG',
-          './images/Thailand/ChiangRai/4.JPG',
           './images/Thailand/ChiangRai/5.JPG',
-          './images/Thailand/ChiangRai/6.JPG',
-          './images/Thailand/ChiangRai/7.JPG',
+          './images/Thailand/ChiangRai/1.JPG',
           // Thailand/Pattaya
           './images/Thailand/Pattaya/1.JPG',
-          './images/Thailand/Pattaya/2.JPG',
-          './images/Thailand/Pattaya/3.JPG',
           // China/Macao
-          './images/China/Macao/1.JPG',
           './images/China/Macao/2.JPG',
+          './images/China/Macao/1.JPG',
           // China/Guangdong
-          './images/China/Guangdong/1.JPG',
-          './images/China/Guangdong/2.JPG',
           './images/China/Guangdong/3.JPG',
-          './images/China/Guangdong/4.JPG',
-          './images/China/Guangdong/5.JPG',
-          './images/China/Guangdong/6.JPG',
+          './images/China/Guangdong/1.JPG',
           // China/Guangxi
           './images/China/Guangxi/1.JPG',
           // China/Yunnan
-          './images/China/Yunnan/1.JPG',
-          './images/China/Yunnan/2.JPG',
-          './images/China/Yunnan/3.JPG',
-          './images/China/Yunnan/4.JPG',
+          // './images/China/Yunnan/1.JPG',
         ],
       }
     })

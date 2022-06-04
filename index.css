@@ -22,26 +22,30 @@
   border-radius: .75rem;
 }
 
-.photos-container {
+.github-container {
+  padding-top: 50px;
+}
+
+.travel-container {
   padding-top: 60px;
 }
-.photos-container .photos-list-container .row {
+.travel-container .travel-list-container .row {
   justify-content: center;
 }
-.photos-container .photos-list-container .background-image {
+.travel-container .travel-list-container .background-image {
   width: 120px;
   height: 90px;
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .photos-container .photos-list-container .background-image {
+  .travel-container .travel-list-container .background-image {
     width: 180px;
     height: 135px;
     background-size: cover;
   }
 }
 @media (min-width: 1200px) {
-  .photos-container .photos-list-container .background-image {
+  .travel-container .travel-list-container .background-image {
     width: 240px;
     height: 180px;
     background-size: cover;
