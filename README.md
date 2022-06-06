@@ -1,8 +1,12 @@
 # My Personal Website
 
-Sharing my projects and some of my travel photos.
+- My Projects
+- My GitHub
+- Travel Photos
+- Resume
 
 ## Website solution
-  - [x] GitHub Pages
-  - [x] Bootstrap 5
-  - [x] Vue.js
+  - [x] GitHub Pages (For Deployment)
+  - [x] Bootstrap 5 (Cascading Style Sheets)
+  - [x] Vue.js (Load Travel Photos)
+  - [x] React (Render Blog Page)
