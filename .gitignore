@@ -3,7 +3,7 @@
 .idea/
 
 # dependencies
-blog/node_modules/
+blog/blog-with-react/node_modules/
 
 # production
-blog/build/
+blog/blog-with-react/build/
