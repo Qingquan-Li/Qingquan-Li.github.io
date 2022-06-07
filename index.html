@@ -160,16 +160,6 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
-  <script type="module">
-    import { annotate } from 'https://unpkg.com/rough-notation?module';
-    const headingProjects = document.querySelector('#headingProjects');
-    const headingGithub = document.querySelector('#headingGithub');
-    const headingTravel = document.querySelector('#headingTravel');
-    annotate(headingProjects, { type: 'underline', color: 'blue' }).show();
-    annotate(headingGithub, { type: 'underline', color: 'DimGray' }).show();
-    annotate(headingTravel, { type: 'underline', color: 'green' }).show();
-  </script>
-
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <script>
@@ -230,6 +220,16 @@
         ],
       }
     })
+  </script>
+
+  <script type="module">
+    import { annotate } from 'https://unpkg.com/rough-notation?module';
+    const headingProjects = document.querySelector('#headingProjects');
+    annotate(headingProjects, { type: 'underline', color: 'blue' }).show();
+    const headingGithub = document.querySelector('#headingGithub');
+    annotate(headingGithub, { type: 'underline', color: 'DimGray' }).show();
+    const headingTravel = document.querySelector('#headingTravel');
+    annotate(headingTravel, { type: 'underline', color: 'green' }).show();
   </script>
 </body>
 
