@@ -1,9 +1,3 @@
 .DS_Store
 .vscode/
 .idea/
-
-# dependencies
-blog/blog-with-react/node_modules/
-
-# production
-blog/blog-with-react/build/
