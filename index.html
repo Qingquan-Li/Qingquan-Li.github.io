@@ -170,6 +170,14 @@
       el: '#app',
       data: {
         images: [
+          // America/California
+          './images/America/California/1.JPG',
+          './images/America/California/2.JPG',
+          './images/America/California/3.JPG',
+          './images/America/California/4.JPG',
+          './images/America/California/5.JPG',
+          './images/America/California/6.JPG',
+          './images/America/California/7.JPG',
           // America/DC
           './images/America/DC/3.JPG',
           './images/America/DC/2.JPG',
@@ -231,6 +239,10 @@
     annotate(headingProjects, { type: 'underline', color: 'blue' }).show();
     const headingGithub = document.querySelector('#headingGithub');
     annotate(headingGithub, { type: 'underline', color: 'DimGray' }).show();
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    await sleep(1500);
     const headingTravel = document.querySelector('#headingTravel');
     annotate(headingTravel, { type: 'underline', color: 'green' }).show();
   </script>
