@@ -1,0 +1,90 @@
+.travel-container {
+  padding-top: 60px;
+}
+
+.travel-container h3 a {
+  /* Bootstrap navbar height is 70px */
+  padding-top: 70px;
+  color: #121314;
+  text-decoration: none;
+}
+.travel-container h3 a span {
+  display: inline-block;
+  line-height: 0.5em;
+  border-bottom: rgba(79, 192, 141, 0.4) 0.35em solid;
+}
+
+
+.travel-list-container .row {
+  /* justify-content: center; */
+  justify-content: left;
+}
+
+/* iPhone678SE2:  portrait: 375px, landscape: 667px */
+/* iPhone Xs Max: portrait: 414px, landscape: 808px */
+/* iPad 9:        portrait: 810px, landscape: 1080 px */
+/* MBP (m1):      1440px   */
+/* iMac (m1):     2240px */
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+.travel-list-container .background-image {
+  /* 29*4=116 */
+  width: 32%;
+  /* 29*3=87 */
+  height: 87px;
+  /* background-size: cover; */
+  object-fit: cover;
+}
+/* Small devices (landscape phones (e.g. iPhone 6,7,8,SE2), 576px and up) */
+@media (min-width: 576px) {
+  .travel-list-container .background-image {
+    /* 40*4=160 */
+    width: 32%;
+    /* 40*3=120 */
+    height: 120px;
+    /* background-size: cover; */
+    object-fit: cover;
+  }
+}
+/* Medium devices (tablets (or landscape iPhone >= Pro), 768px and up) */
+@media (min-width: 768px) {
+  .travel-list-container .background-image {
+    /* 54*4=216 */
+    width: 32.5%;
+    /* 54*3=162 */
+    height: 162px;
+    /* background-size: cover; */
+    object-fit: cover;
+  }
+}
+/* Large devices (desktops (or landscape iPad), 992px and up) */
+@media (min-width: 992px) {
+  .travel-list-container .background-image {
+    /* 74*4=296 */
+    width: 32.5%;
+    /* 74*3=222 */
+    height: 222px;
+    /* background-size: cover; */
+    object-fit: cover;
+  }
+}
+/* X-Large devices (large desktops (e.g. >= MBP), 1200px and up) */
+@media (min-width: 1200px) {
+  .travel-list-container .card {
+    width: 945px;
+    /* center it */
+    margin: 0 auto;
+  }
+  .travel-list-container .background-image {
+    /* 74*4=296 */
+    width: 32.5%;
+    /* 74*3=222 */
+    height: 222px;
+    /* background-size: cover; */
+    object-fit: cover;
+  }
+}
+/* XX-Large devices (larger desktops, 1400px and up) */
+/* @media (min-width: 1400px) {...}
+} */
