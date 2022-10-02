@@ -1,14 +1,14 @@
 # My Personal Website
 
-- My Projects
-- My GitHub
-- Travel Photos
-- Resume
+- [x] My Projects
+- [x] My GitHub
+- [x] Travel Photos
+- [ ] Resume
 
 ## Tech Stack
-  - [x] React.js and Vue.js(For front-end rendering)
-  - [x] Bootstrap 5 (Cascading Style Sheets)
-  - [x] GitHub Pages (For Deployment)
+  - React.js and Vue.js(For front-end rendering)
+  - Bootstrap 5 (Cascading Style Sheets)
+  - GitHub Pages (For Deployment)
 
 ## Deployment
 

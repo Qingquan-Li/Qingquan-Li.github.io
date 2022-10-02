@@ -22,21 +22,21 @@ function Games() {
         <p>
           Just for fun:)
           <br />
-          1. Match Fruit <span className="fw-light">(Develop with Vue.js)</span>
+          1. Fruit Matching <span className="fw-light">(Develop with Vue.js)</span>
           <br />
           2. Tic Tac Toe <span className="fw-light">(Develop with React.js)</span>
         </p>
         <a
-          href="./match-fruit/"
+          href="https://qingquan-li.github.io/fruit-matching/"
           className="btn btn-outline-primary"
           target="_blank"
           rel="noopener noreferrer"
         >
-          match-fruit
+          fruit-matching
         </a>
         &nbsp;
         <a
-          href="./tic-tac-toe/"
+          href="https://qingquan-li.github.io/tic-tac-toe/"
           className="btn btn-outline-primary"
           target="_blank"
           rel="noopener noreferrer"

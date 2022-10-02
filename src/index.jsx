@@ -6,14 +6,17 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Without this import, the navbar collapsed button does not working:
 // stackoverflow.com/questions/66217242/collapsed-navbar-not-working-react-and-bootstrap-5
 import 'bootstrap/dist/js/bootstrap.bundle';
-import './index.css';
+// import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

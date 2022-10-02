@@ -178,6 +178,14 @@ const Travel = () => {
           descrption="Macao 🇲🇴"
           photos={ChinaMacao}
         />
+
+        <p className="text-center fw-lighter">
+          <small>
+            <small>        
+              We travel not to escape life, but for life not to escape us.
+            </small>
+          </small>
+        </p>
       </div>
     </div>
 

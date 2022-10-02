@@ -1,25 +1,14 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import Avatar from './components/Avatar';
-import SelfIntroduction from './components/SelfIntroduction';
-import Projects from './components/Projects';
-import GithubStats from './components/GithubStats';
-import Travel from './components/Travel';
+import { Routes, Route, } from 'react-router-dom';
+
+import Home from './home';
+import Resume from './resume';
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <div className="row">
-          <NavBar />
-          <Avatar />
-          <SelfIntroduction />
-          <Projects />
-          <GithubStats />
-          <Travel />
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/resume" element={<Resume />} />
+    </Routes>
   );
 }
 
