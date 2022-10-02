@@ -181,7 +181,7 @@ const Travel = () => {
 
         <p className="text-center fw-lighter">
           <small>
-            <small>        
+            <small>
               We travel not to escape life, but for life not to escape us.
             </small>
           </small>
