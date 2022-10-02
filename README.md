@@ -1,9 +1,9 @@
 # My Personal Website
 
-- [x] My Projects
-- [x] My GitHub
-- [x] Travel Photos
-- [ ] Resume
+- My Projects
+- My GitHub
+- Travel Photos
+- Resume
 
 ## Tech Stack
   - React.js and Vue.js(For front-end rendering)
