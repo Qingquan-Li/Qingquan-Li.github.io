@@ -12,7 +12,8 @@ export default function GithubStats() {
       <div className="text-center py-4">
         <a href="https://github.com/Qingquan-Li" target="_blank" rel="noopener noreferrer">
           <img
-            src="https://github-readme-stats-qingquan-li.vercel.app/api?username=Qingquan-Li&show_icons=true&theme=graywhite"
+            // src="https://github-readme-stats-qingquan-li.vercel.app/api?username=Qingquan-Li&show_icons=true&theme=graywhite"
+            src="https://github-readme-stats.vercel.app/api?username=Qingquan-Li&show_icons=true&theme=graywhite"
             className="img-fluid"
             alt="github.com/Qingquan-Li"
           />
