@@ -17,7 +17,7 @@ export default function NavBar() {
               <a className="nav-link" href="#github">GitHub</a>
               <a className="nav-link" href="#travel">Travel</a>
               <a className="nav-link"
-                href="https://www.instagram.com/qingquanliii/"
+                href="https://www.instagram.com/jake.liii/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
