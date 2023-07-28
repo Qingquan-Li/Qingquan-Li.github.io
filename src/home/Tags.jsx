@@ -44,6 +44,15 @@ export default function Tags() {
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         <a
+          href="https://github.com/Qingquan-Li/blog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Blogger
+        </a>
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        <a
           href="https://github.com/Qingquan-Li"
           target="_blank"
           rel="noopener noreferrer"

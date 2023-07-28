@@ -15,8 +15,21 @@ export default function NavBar() {
             <div className="navbar-nav ms-auto">
               <a className="nav-link" href="#github">GitHub</a>
               <a className="nav-link" href="#travel">Travel</a>
+              <a className="nav-link"
+                href="https://qingquanli.com/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog
+              </a>
               {/* Resume.pdf stored in the codebase */}
-              <a className="nav-link" href="/Resume.pdf">Resume</a>
+              <a className="nav-link"
+                href="/Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
               <a className="nav-link"
                 href="https://www.instagram.com/jake.liii/"
                 target="_blank"
