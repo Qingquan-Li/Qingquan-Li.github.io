@@ -3,7 +3,7 @@ import React from 'react';
 import NavBar from './NavBar';
 import Avatar from './Avatar';
 import SelfIntroduction from './SelfIntroduction';
-import Projects from './Projects';
+import Tags from './Tags';
 import GithubStats from './GithubStats';
 import Travel from './Travel';
 
@@ -14,7 +14,7 @@ export default function Home() {
         <NavBar />
         <Avatar />
         <SelfIntroduction />
-        <Projects />
+        <Tags />
         <GithubStats />
         <Travel />
       </div>

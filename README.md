@@ -1,9 +1,10 @@
 # My Personal Website
 
-- My Projects
+- About Me
 - My GitHub
 - Travel Photos
 - Resume
+- Links: LinkedIn, Instagram...
 
 ## Tech Stack
   - React.js and Vue.js(For front-end rendering)
