@@ -61,6 +61,15 @@ export default function Tags() {
         </a>
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
+        <a
+          href="https://www.credly.com/badges/713879ca-309f-4385-b7bf-fdb5415e3710"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AWS Certified Cloud Practitioner
+        </a>
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
         Java
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
@@ -73,10 +82,16 @@ export default function Tags() {
         C++
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
+        PHP
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
         Spring Boot
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Django
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        Flask
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         React
@@ -91,13 +106,13 @@ export default function Tags() {
         MongoDB
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
-        Firebase
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
         Linux
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Docker
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        Git
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Figma
