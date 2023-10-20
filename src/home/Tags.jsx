@@ -4,7 +4,7 @@ export default function Tags() {
   return (
     <div className="container text-center py-4 col-lg-8 mb-4">
       <span className="badge rounded-pill text-bg-light p-2 m-1">
-        Software Developer
+        Software Engineer
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         <a
@@ -21,7 +21,7 @@ export default function Tags() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Student Researcher
+          Research Assistant
         </a>
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
@@ -79,12 +79,6 @@ export default function Tags() {
         JavaScript
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
-        C++
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
-        PHP
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
         Spring Boot
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
@@ -110,12 +104,6 @@ export default function Tags() {
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Docker
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
-        Git
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
-        Figma
       </span>
 
     </div>
