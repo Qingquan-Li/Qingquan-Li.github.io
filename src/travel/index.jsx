@@ -1,5 +1,4 @@
-import React from 'react';
-import './Travel.css'
+import './index.css';
 import {
   ThailandChiangMai, ThailandChiangRai, ThailandPattaya, ThailandBangkok,
   ChinaGuangdong, ChinaYunnan, ChinaHongKong, ChinaMacao,
@@ -50,9 +49,7 @@ const Travel = () => {
   return (
     <div className="travel-container">
       <h3 className="text-center">
-        <a name="travel" href="#travel">
           <span>Travel</span>
-        </a>
       </h3>
 
       <div className="travel-list-container py-4">

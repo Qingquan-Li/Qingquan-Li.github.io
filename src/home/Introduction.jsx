@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function SelfIntroduction() {
+export default function Introduction() {
   return (
     <>
       <h5 className="pt-4 text-center">

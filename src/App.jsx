@@ -1,14 +1,38 @@
-import { Routes, Route, } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
 
+import NavBar from './common/NavBar';
+import ErrorPage from './common/ErrorPage';
 import Home from './home';
+import Travel from './travel';
 import Resume from './resume';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/travel',
+    element: <Travel />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/resume',
+    element: <Resume />,
+    errorElement: <ErrorPage />,
+  },
+]);
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/resume" element={<Resume />} />
-    </Routes>
+    <>
+      <NavBar />
+      <RouterProvider router={router} />
+    </>
   );
 }
 

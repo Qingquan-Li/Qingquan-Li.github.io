@@ -1,14 +1,10 @@
 .travel-container {
-  padding-top: 60px;
+  /* Bootstrap navbar height is 70px */
+  padding-top: 100px;
+  padding-bottom: 60px;
 }
 
-.travel-container h3 a {
-  /* Bootstrap navbar height is 70px */
-  padding-top: 70px;
-  color: #121314;
-  text-decoration: none;
-}
-.travel-container h3 a span {
+.travel-container h3 span {
   display: inline-block;
   line-height: 0.5em;
   border-bottom: rgba(79, 192, 141, 0.4) 0.35em solid;

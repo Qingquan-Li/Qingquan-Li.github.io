@@ -1,6 +1,5 @@
 const URL = "https://raw.githubusercontent.com/Qingquan-Li/files/main/TravelPhotos/";
 
-
 export const AmericaNewYorkNYC = [
   URL + "America/NewYork/NYC/1.jpg",
   URL + "America/NewYork/NYC/2.jpg",
