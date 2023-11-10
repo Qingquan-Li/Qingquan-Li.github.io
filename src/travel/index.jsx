@@ -47,7 +47,7 @@ const PhotosCard = (props) => {
 // export default function Travel() {
 const Travel = () => {
   return (
-    <div className="travel-container">
+    <div className="container travel-container">
       <h3 className="text-center">
           <span>Travel</span>
       </h3>
