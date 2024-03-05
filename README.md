@@ -1,15 +1,16 @@
 # My Personal Website
 
 - About Me
-- My GitHub
 - Travel Photos
+- Blog
 - Resume
-- Links: LinkedIn, Instagram...
+- GitHub
+- LinkedIn
 
-## Tech Stack
-  - React.js and Vue.js(For front-end rendering)
-  - Bootstrap 5 (Cascading Style Sheets)
-  - GitHub Pages (For Deployment)
+## Tech Stacks
+  - React.js
+  - Bootstrap 5
+  - GitHub Pages
 
 ## Deployment
 
