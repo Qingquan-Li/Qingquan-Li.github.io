@@ -76,7 +76,13 @@ export default function Tags() {
         Python
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
+        Go
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
         JavaScript
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        TypeScript
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Spring Boot
@@ -104,6 +110,9 @@ export default function Tags() {
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Docker
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        Kubernetes
       </span>
 
     </div>
