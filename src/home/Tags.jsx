@@ -8,6 +8,27 @@ export default function Tags() {
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         <a
+          href="https://www.credly.com/badges/26f505fd-b782-4064-b24f-3e0724ed54f1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AWS Certified Solutions Architect - Associate
+        </a>
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        <a
+          href="https://www.credly.com/badges/713879ca-309f-4385-b7bf-fdb5415e3710"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AWS Certified Cloud Practitioner
+        </a>
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        Computer Science Club President
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        <a
           href="https://devpost.com/software/asdfj"
           target="_blank"
           rel="noopener noreferrer"
@@ -34,10 +55,19 @@ export default function Tags() {
         </a>
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
-        Fundraising Volunteer
+        <a
+          href="https://github.com/Qingquan-Li"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Starstruck
+        </a>
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Student Representative
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        Fundraising Volunteer
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Table Tennis Champion
@@ -52,28 +82,13 @@ export default function Tags() {
         </a>
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
-        <a
-          href="https://github.com/Qingquan-Li"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub Starstruck
-        </a>
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
-        <a
-          href="https://www.credly.com/badges/713879ca-309f-4385-b7bf-fdb5415e3710"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          AWS Certified Cloud Practitioner
-        </a>
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
         Java
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Python
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
+        C++
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Go
@@ -114,7 +129,6 @@ export default function Tags() {
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Kubernetes
       </span>
-
     </div>
   );
 }
