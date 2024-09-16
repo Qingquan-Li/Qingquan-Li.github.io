@@ -25,6 +25,15 @@ export default function Tags() {
         </a>
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
+        <a
+          href="https://badgr.com/public/assertions/gIqDvt7LQ5Oq6CqWwsBByA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Postman API Fundamentals Student Expert
+        </a>
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
         Computer Science Club President
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
@@ -64,9 +73,6 @@ export default function Tags() {
         </a>
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
-        Student Representative
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
         Fundraising Volunteer
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
@@ -88,16 +94,13 @@ export default function Tags() {
         Python
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
+        JavaScript
+      </span>
+      <span className="badge rounded-pill text-bg-light p-2 m-1">
         C++
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Go
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
-        JavaScript
-      </span>
-      <span className="badge rounded-pill text-bg-light p-2 m-1">
-        TypeScript
       </span>
       <span className="badge rounded-pill text-bg-light p-2 m-1">
         Spring Boot
